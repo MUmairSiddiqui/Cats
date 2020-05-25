@@ -4,44 +4,51 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Cats.Common;
 using Cats.Services;
-using Cats.Services.Interfaces;
 using Cats.Domain;
 using System.Collections.Generic;
 using Cats.Domain.Enum;
+using Cats.Domain.Services;
 
 namespace Cats
 {
     class Program
     {
-        static async System.Threading.Tasks.Task Main(string[] args)
+        static void Main(string[] args)
         {
             var serviceProvider = new ServiceCollection()
                 .AddConfigServices()
                 .AddCommonServices()
                 .AddServices()
+                .AddLogging()
                 .BuildServiceProvider();
                         
             var personService = serviceProvider.GetService<IPersonService>();
             
             Console.WriteLine("Getting People data from the service...");
-            var result = await personService.GetPeopleAsync();
+            var result = personService.GetPeopleAsync()
+                .GetAwaiter()
+                .GetResult();
             Console.WriteLine("People data obtained.");
+            Console.WriteLine("Writing pet names.");
+            Console.WriteLine();
 
             if (!result.IsSuccess)
             {
-                Console.WriteLine("Getting people failed");
+                Console.WriteLine("Getting people failed. Press any key to exit");
+                Console.ReadKey();
                 return;
             }
 
             //we got the data, we can use it however we want.
             Write(result.Value);
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
         }
 
         static void Write(IEnumerable<Person> people)
         {
-            if (people == null)
-                throw new ArgumentNullException("People is null");
-
             var genderData = people
                 .GroupBy(person => person.Gender);
 

@@ -15,8 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cats.Common\Cats.Common.csproj" />
-    <ProjectReference Include="..\Cats.Configurations\Cats.Configurations.csproj" />
     <ProjectReference Include="..\Cats.Domain\Cats.Domain.csproj" />
     <ProjectReference Include="..\Cats.Services\Cats.Services.csproj" />
   </ItemGroup>

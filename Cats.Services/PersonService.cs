@@ -1,7 +1,7 @@
-﻿using Cats.Common.Interfaces;
-using Cats.Configurations.Interfaces;
-using Cats.Domain;
-using Cats.Services.Interfaces;
+﻿using Cats.Domain;
+using Cats.Domain.Common;
+using Cats.Domain.Configurations;
+using Cats.Domain.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

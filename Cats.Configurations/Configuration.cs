@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Cats.Configurations
 {    
-    internal class Configuration : Interfaces.IConfiguration
+    internal class Configuration : Domain.Configurations.IConfiguration
     {
         private readonly IConfiguration _configuration = null;
 

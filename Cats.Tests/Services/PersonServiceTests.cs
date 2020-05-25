@@ -1,6 +1,6 @@
-using Cats.Common.Interfaces;
-using Cats.Configurations.Interfaces;
 using Cats.Domain;
+using Cats.Domain.Common;
+using Cats.Domain.Configurations;
 using Cats.Services;
 using Moq;
 using Newtonsoft.Json;

@@ -1,4 +1,4 @@
-﻿using Cats.Common.Interfaces;
+﻿using Cats.Domain.Common;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;

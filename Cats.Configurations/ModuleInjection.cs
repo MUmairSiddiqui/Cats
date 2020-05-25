@@ -1,5 +1,5 @@
 ﻿using Cats.Configurations;
-using Cats.Configurations.Interfaces;
+using Cats.Domain.Configurations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Cats.Common

@@ -1,4 +1,4 @@
-﻿using Cats.Services.Interfaces;
+﻿using Cats.Domain.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Cats.Services
